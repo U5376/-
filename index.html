@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head> 
-  <title>ɳ������ ȫ�ؿ�Ԥ��</title> 
+  <meta charset="UTF-8">
+  <title>沙洲遗闻 全关卡预览</title> 
 <style>#directory {
     position: fixed;
     top: 0;
@@ -31,15 +32,15 @@
 
 #content {
     margin-left: 0;
- /* Ĭ�ϲ�����Ŀ¼�Ŀռ� */
+ /* 默认不留出目录的空间 */
     padding: 10px;
     transition: margin-left 0.5s;
- /* ƽ������ */
+ /* 平滑过渡 */
 }
 
 .directory-expanded #content {
     margin-left: 220px;
- /* ����Ŀ¼���ȵ��� */
+ /* 根据目录宽度调整 */
 }
 
 img {
@@ -50,7 +51,7 @@ img {
 }
 
 body {
-    font-family: "SimSun", "����", "NSimSun", "������", Arial, sans-serif;
+    font-family: "SimSun", "宋体", "NSimSun", "新宋体", Arial, sans-serif;
 }
 
 a {
@@ -66,12 +67,12 @@ a {
 }
 </style> 
 
-  <script>// ͼƬ�鿴����
-      var originalWidth = "70%"; // ����ԭʼ����
-      var originalSize = false; // ����һ�������������Ƿ���ԭʼ��С
+  <script>// 图片查看功能
+      var originalWidth = "70%"; // 保存原始宽度
+      var originalSize = false; // 新增一个变量来保存是否是原始大小
       function showImage(imagePath) {
         var contentDiv = document.getElementById("content");
-        contentDiv.innerHTML = '<button onclick="zoomIn()">�Ŵ�</button> <button onclick="zoomOut()">��С</button> <button onclick="showOriginalSize()">��ʾԭʼ�ֱ���</button><br><br><img id="image" src="' + imagePath + '" style="width: ' + originalWidth + '" onclick="toggleSize()" )"><br><br> ';
+        contentDiv.innerHTML = '<button onclick="zoomIn()">放大</button> <button onclick="zoomOut()">缩小</button> <button onclick="showOriginalSize()">显示原始分辨率</button><br><br><img id="image" src="' + imagePath + '" style="width: ' + originalWidth + '" onclick="toggleSize()" )"><br><br> ';
       }
 
       function goBack() {
@@ -83,21 +84,21 @@ a {
         var img = document.querySelector("#content img");
         var currentWidth = img.clientWidth;
         img.style.width = (currentWidth + 100) + "px";
-        originalSize = false; // �Ŵ������ԭʼ��С
+        originalSize = false; // 放大后不再是原始大小
       }
 
       function zoomOut() {
         var img = document.querySelector("#content img");
         var currentWidth = img.clientWidth;
         img.style.width = (currentWidth - 100) + "px";
-        originalSize = false; // ��С������ԭʼ��С
+        originalSize = false; // 缩小后不再是原始大小
       }
 
       function showOriginalSize() {
         var img = document.getElementById("image");
-        // �Ƴ��������ã�����ʾͼƬ��ԭʼ��С
+        // 移除宽度设置，以显示图片的原始大小
         img.style.removeProperty('width');
-        // �Ƴ����������ƣ�ȷ��ͼƬ����չ������ԭʼ��С
+        // 移除最大宽度限制，确保图片可以展开到其原始大小
         img.style.maxWidth = "none";
         originalSize = true;
       }
@@ -107,15 +108,15 @@ a {
         if (!originalSize) {
           img.style.width = originalWidth;
         } else {
-          img.style.width = "100%"; // ��������Ϊ��������Ҫ��Ĭ�ϴ�С
+          img.style.width = "100%"; // 或者设置为其他你想要的默认大小
         }
-        originalSize = !originalSize; // �л�ԭʼ��С״̬
+        originalSize = !originalSize; // 切换原始大小状态
       }
 
-      // Ŀ¼չ��/�۵����ܣ������Զ����غ���ʾ
+      // 目录展开/折叠功能，包括自动隐藏和显示
       document.addEventListener("DOMContentLoaded",
       function() {
-        var isExpanded = false; // �޸�Ϊfalse��ʹĿ¼��ʼ״̬Ϊ�۵�
+        var isExpanded = false; // 修改为false，使目录初始状态为折叠
         function toggleExpand() {
           isExpanded = !isExpanded;
           var directory = document.getElementById("directory");
@@ -131,13 +132,13 @@ a {
           }
         }
 
-        // Ŀ¼��ʼΪ�۵�״̬
+        // 目录初始为折叠状态
         var directory = document.getElementById("directory");
         var body = document.body;
         directory.classList.remove("expanded");
         body.classList.remove("directory-expanded");
-        directory.style.transform = "translateX(-100%)"; // ȷ��Ŀ¼��ʼΪ�۵�״̬
-        // �����Զ����غ���ʾ����
+        directory.style.transform = "translateX(-100%)"; // 确保目录初始为折叠状态
+        // 添加自动隐藏和显示功能
         var hoverArea = document.createElement("div");
         hoverArea.style.position = "absolute";
         hoverArea.style.top = "0";
@@ -173,125 +174,125 @@ a {
  </head> 
  
  <body> 
-  <button id="toggle-btn" onclick="toggleExpand()">��</button> 
+  <button id="toggle-btn" onclick="toggleExpand()">≡</button> 
   <div id="directory"> 
-   <h3 onclick="toggleBuilding()">����</h3> 
+   <h3 onclick="toggleBuilding()">基建</h3> 
    <div id="buildingContent" style="display: none;"> 
     <ul> 
-     <li> <a href="#" onclick="showImage('����1.avif')">����1</a></li> 
-     <li> <a href="#" onclick="showImage('����2.avif')">����2</a></li> 
+     <li> <a href="#" onclick="showImage('基建1.avif')">基建1</a></li> 
+     <li> <a href="#" onclick="showImage('基建2.avif')">基建2</a></li> 
     </ul> 
    </div> 
-   <h3> <a href="#" onclick="showImage('ɳ������ ������.jpg')">������</a></h3> 
-   <h3>��Դ��</h3> 
+   <h3> <a href="#" onclick="showImage('沙洲遗闻 料理表.jpg')">料理表</a></h3> 
+   <h3>资源区</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('���Ĺ�ľ��.avif')">���Ĺ�ľ��</a></li> 
-    <li> <a href="#" onclick="showImage('�����ʯ��.avif')">�����ʯ��</a></li> 
-    <li> <a href="#" onclick="showImage('����֮��.avif')">����֮��</a></li> 
-    <li> <a href="#" onclick="showImage('Ѱ�ٳ���.avif')">Ѱ�ٳ���</a></li> 
-    <li> <a href="#" onclick="showImage('���ж�Ѩ.avif')">���ж�Ѩ</a></li> 
-    <li> <a href="#" onclick="showImage('ӭ������.avif')">ӭ������</a></li> 
-    <li> <a href="#" onclick="showImage('���.avif')">���</a></li> 
-    <li> <a href="#" onclick="showImage('�ر���.avif')">�ر���</a></li> 
-    <li> <a href="#" onclick="showImage('��������.avif')">��������</a></li> 
-    <li> <a href="#" onclick="showImage('�����·.avif')">�����·</a></li> 
-    <li> <a href="#" onclick="showImage('����֮��.avif')">����֮��</a></li> 
-    <li> <a href="#" onclick="showImage('�β���ľ.avif')">�β���ľ</a></li> 
-    <li> <a href="#" onclick="showImage('��ľ��˰.avif')">��ľ��˰</a></li> 
-    <li> <a href="#" onclick="showImage('�������.avif')">�������</a></li> 
-    <li> <a href="#" onclick="showImage('����Ѱ��.avif')">����Ѱ��</a></li> 
-    <li> <a href="#" onclick="showImage('���鳡.avif')">���鳡</a></li> 
-    <li> <a href="#" onclick="showImage('���ǻ���.avif')">���ǻ���</a></li> 
-    <li> <a href="#" onclick="showImage('������Ȼ.avif')">������Ȼ</a></li> 
-    <li> <a href="#" onclick="showImage('ȡ��.avif')">ȡ��</a></li> 
-    <li> <a href="#" onclick="showImage('ʮ��·��.avif')">ʮ��·��</a></li> 
-    <li> <a href="#" onclick="showImage('��������.avif')">��������</a></li> 
-    <li> <a href="#" onclick="showImage('��ʯ��.avif')">��ʯ��</a></li> 
-    <li> <a href="#" onclick="showImage('��֤��.avif')">��֤��</a></li> 
-    <li> <a href="#" onclick="showImage('�����վ�.avif')">�����վ�</a></li> 
-    <li> <a href="#" onclick="showImage('����֮��.avif')">����֮��</a></li> 
+    <li> <a href="#" onclick="showImage('丰饶灌木林.avif')">丰饶灌木林</a></li> 
+    <li> <a href="#" onclick="showImage('崎岖乱石岗.avif')">崎岖乱石岗</a></li> 
+    <li> <a href="#" onclick="showImage('熔铁之心.avif')">熔铁之心</a></li> 
+    <li> <a href="#" onclick="showImage('寻觅澄亮.avif')">寻觅澄亮</a></li> 
+    <li> <a href="#" onclick="showImage('惊叫洞穴.avif')">惊叫洞穴</a></li> 
+    <li> <a href="#" onclick="showImage('迎宾走廊.avif')">迎宾走廊</a></li> 
+    <li> <a href="#" onclick="showImage('金库.avif')">金库</a></li> 
+    <li> <a href="#" onclick="showImage('藏宝湾.avif')">藏宝湾</a></li> 
+    <li> <a href="#" onclick="showImage('矿牢爬行.avif')">矿牢爬行</a></li> 
+    <li> <a href="#" onclick="showImage('峰回歧路.avif')">峰回歧路</a></li> 
+    <li> <a href="#" onclick="showImage('树林之主.avif')">树林之主</a></li> 
+    <li> <a href="#" onclick="showImage('参差林木.avif')">参差林木</a></li> 
+    <li> <a href="#" onclick="showImage('伐木征税.avif')">伐木征税</a></li> 
+    <li> <a href="#" onclick="showImage('射程以内.avif')">射程以内</a></li> 
+    <li> <a href="#" onclick="showImage('林中寻宝.avif')">林中寻宝</a></li> 
+    <li> <a href="#" onclick="showImage('试验场.avif')">试验场</a></li> 
+    <li> <a href="#" onclick="showImage('遗智还家.avif')">遗智还家</a></li> 
+    <li> <a href="#" onclick="showImage('守卫自然.avif')">守卫自然</a></li> 
+    <li> <a href="#" onclick="showImage('取舍.avif')">取舍</a></li> 
+    <li> <a href="#" onclick="showImage('十字路口.avif')">十字路口</a></li> 
+    <li> <a href="#" onclick="showImage('矿脉守卫.avif')">矿脉守卫</a></li> 
+    <li> <a href="#" onclick="showImage('乱石岗.avif')">乱石岗</a></li> 
+    <li> <a href="#" onclick="showImage('见证所.avif')">见证所</a></li> 
+    <li> <a href="#" onclick="showImage('固守险境.avif')">固守险境</a></li> 
+    <li> <a href="#" onclick="showImage('部落之争.avif')">部落之争</a></li> 
    </ul> 
-   <h3>������</h3> 
+   <h3>捕猎区</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('����֮��.avif')">����֮��</a></li> 
-    <li> <a href="#" onclick="showImage('ǳ�ݻ�ԭ.avif')">ǳ�ݻ�ԭ</a></li> 
-    <li> <a href="#" onclick="showImage('����зѨ.avif')">����зѨ</a></li> 
-    <li> <a href="#" onclick="showImage('��ʧ��̲.avif')">��ʧ��̲</a></li> 
-    <li> <a href="#" onclick="showImage('�׼�֮��.avif')">�׼�֮��</a></li> 
-    <li> <a href="#" onclick="showImage('�ҿ�зȺ.avif')">�ҿ�зȺ</a></li> 
-    <li> <a href="#" onclick="showImage('Դʯ������.avif')">Դʯ������</a></li> 
-    <li> <a href="#" onclick="showImage('ԭʼ����.avif')">ԭʼ����</a></li> 
-    <li> <a href="#" onclick="showImage('��ˮΪ��.avif')">��ˮΪ��</a></li> 
-    <li> <a href="#" onclick="showImage('ֱ����Ԩ.avif')">ֱ����Ԩ</a></li> 
-    <li> <a href="#" onclick="showImage('��·����.avif')">��·����</a></li> 
-    <li> <a href="#" onclick="showImage('���ν���.avif')">���ν���</a></li> 
-    <li> <a href="#" onclick="showImage('ѱ��.avif')">ѱ��</a></li> 
-    <li> <a href="#" onclick="showImage('���ξ�����.avif')">���ξ�����</a></li> 
-    <li> <a href="#" onclick="showImage('��Ǩ��.avif')">��Ǩ��</a></li> 
+    <li> <a href="#" onclick="showImage('聚羽之地.avif')">聚羽之地</a></li> 
+    <li> <a href="#" onclick="showImage('浅草荒原.avif')">浅草荒原</a></li> 
+    <li> <a href="#" onclick="showImage('岛中蟹穴.avif')">岛中蟹穴</a></li> 
+    <li> <a href="#" onclick="showImage('迷失沼滩.avif')">迷失沼滩</a></li> 
+    <li> <a href="#" onclick="showImage('献祭之所.avif')">献祭之所</a></li> 
+    <li> <a href="#" onclick="showImage('岩壳蟹群.avif')">岩壳蟹群</a></li> 
+    <li> <a href="#" onclick="showImage('源石虫入侵.avif')">源石虫入侵</a></li> 
+    <li> <a href="#" onclick="showImage('原始奔腾.avif')">原始奔腾</a></li> 
+    <li> <a href="#" onclick="showImage('饮水为饵.avif')">饮水为饵</a></li> 
+    <li> <a href="#" onclick="showImage('直奔深渊.avif')">直奔深渊</a></li> 
+    <li> <a href="#" onclick="showImage('夺路而逃.avif')">夺路而逃</a></li> 
+    <li> <a href="#" onclick="showImage('无形界限.avif')">无形界限</a></li> 
+    <li> <a href="#" onclick="showImage('驯化.avif')">驯化</a></li> 
+    <li> <a href="#" onclick="showImage('方形竞技场.avif')">方形竞技场</a></li> 
+    <li> <a href="#" onclick="showImage('大迁徙.avif')">大迁徙</a></li> 
    </ul> 
-   <h3>������</h3> 
+   <h3>无主地</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('������ַ.avif')">������ַ</a></li> 
-    <li> <a href="#" onclick="showImage('��Ȧ����.avif')">��Ȧ����</a></li> 
-    <li> <a href="#" onclick="showImage('�����ս�.avif')">�����ս�</a></li> 
-    <li> <a href="#" onclick="showImage('��Ȫ֮��.avif')">��Ȫ֮��</a></li> 
-    <li> <a href="#" onclick="showImage('��������.avif')">��������</a></li> 
-    <li> <a href="#" onclick="showImage('�����ѹ�.avif')">�����ѹ�</a></li> 
-    <li> <a href="#" onclick="showImage('ʧ��ġ���������.avif')">ʧ��ġ���������</a></li> 
-    <li> <a href="#" onclick="showImage('ʧ��ľ�����.avif')">ʧ��ľ�����</a></li> 
-    <li> <a href="#" onclick="showImage('��ز���.avif')">��ز���</a></li> 
+    <li> <a href="#" onclick="showImage('翠梦遗址.avif')">翠梦遗址</a></li> 
+    <li> <a href="#" onclick="showImage('火圈狂舞.avif')">火圈狂舞</a></li> 
+    <li> <a href="#" onclick="showImage('宿命终结.avif')">宿命终结</a></li> 
+    <li> <a href="#" onclick="showImage('清泉之下.avif')">清泉之下</a></li> 
+    <li> <a href="#" onclick="showImage('晶生玲珑.avif')">晶生玲珑</a></li> 
+    <li> <a href="#" onclick="showImage('深岩裂谷.avif')">深岩裂谷</a></li> 
+    <li> <a href="#" onclick="showImage('失落的“长生军”.avif')">失落的“长生军”</a></li> 
+    <li> <a href="#" onclick="showImage('失落的巨翼兽.avif')">失落的巨翼兽</a></li> 
+    <li> <a href="#" onclick="showImage('大地病征.avif')">大地病征</a></li> 
    </ul> 
-   <h3>Ҫ��</h3> 
+   <h3>要塞</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('��˰��ѡ��.avif')">��˰��ѡ��</a></li> 
-    <li> <a href="#" onclick="showImage('����֮��.avif')">����֮��</a></li> 
-    <li> <a href="#" onclick="showImage('ս������.avif')">ս������</a></li> 
+    <li> <a href="#" onclick="showImage('征税的选择.avif')">征税的选择</a></li> 
+    <li> <a href="#" onclick="showImage('不速之客.avif')">不速之客</a></li> 
+    <li> <a href="#" onclick="showImage('战争本能.avif')">战争本能</a></li> 
    </ul> 
-   <h3>�ذ�</h3> 
+   <h3>关隘</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('���ҹ�.avif')">���ҹ�</a></li> 
-    <li> <a href="#" onclick="showImage('��Ӱ��.avif')">��Ӱ��</a></li> 
-    <li> <a href="#" onclick="showImage('ǧ���.avif')">ǧ���</a></li> 
+    <li> <a href="#" onclick="showImage('炎岩关.avif')">炎岩关</a></li> 
+    <li> <a href="#" onclick="showImage('翠影关.avif')">翠影关</a></li> 
+    <li> <a href="#" onclick="showImage('千仞关.avif')">千仞关</a></li> 
    </ul> 
-   <h3>�ķϳ���</h3> 
+   <h3>荒废城镇</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('�ں���ʲ.avif')">�ں���ʲ</a></li> 
-    <li> <a href="#" onclick="showImage('��¬����ͼ.avif')">��¬����ͼ</a></li> 
-    <li> <a href="#" onclick="showImage('����ͼ����.avif')">����ͼ����</a></li> 
-    <li> <a href="#" onclick="showImage('������-��������.avif')">������-��������</a></li> 
+    <li> <a href="#" onclick="showImage('乌胡米什.avif')">乌胡米什</a></li> 
+    <li> <a href="#" onclick="showImage('布卢塔巴图.avif')">布卢塔巴图</a></li> 
+    <li> <a href="#" onclick="showImage('那穆图巴辛.avif')">那穆图巴辛</a></li> 
+    <li> <a href="#" onclick="showImage('别塔卜-阿帕卡里.avif')">别塔卜-阿帕卡里</a></li> 
    </ul> 
-   <h3>��ͻ��</h3> 
+   <h3>冲突区</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('սʿ����Ұ.avif')">սʿ����Ұ</a></li> 
-    <li> <a href="#" onclick="showImage('Ӷ��������.avif')">Ӷ��������</a></li> 
-    <li> <a href="#" onclick="showImage('��ʧ�Ķ���.avif')">��ʧ�Ķ���</a></li> 
-    <li> <a href="#" onclick="showImage('�����һ�.avif')">�����һ�</a></li> 
-    <li> <a href="#" onclick="showImage('�����Ƶ�ŭ��.avif')">�����Ƶ�ŭ��</a></li> 
-    <li> <a href="#" onclick="showImage('����.avif')">����</a></li> 
-    <li> <a href="#" onclick="showImage('���ѺӴ�.avif')">���ѺӴ�</a></li> 
-    <li> <a href="#" onclick="showImage('Ѱ�ٵ�·.avif')">Ѱ�ٵ�·</a></li> 
-    <li> <a href="#" onclick="showImage('����ս.avif')">����ս</a></li> 
+    <li> <a href="#" onclick="showImage('战士的视野.avif')">战士的视野</a></li> 
+    <li> <a href="#" onclick="showImage('佣兵的所属.avif')">佣兵的所属</a></li> 
+    <li> <a href="#" onclick="showImage('丢失的订单.avif')">丢失的订单</a></li> 
+    <li> <a href="#" onclick="showImage('不尽烈火.avif')">不尽烈火</a></li> 
+    <li> <a href="#" onclick="showImage('被限制的怒火.avif')">被限制的怒火</a></li> 
+    <li> <a href="#" onclick="showImage('囚笼.avif')">囚笼</a></li> 
+    <li> <a href="#" onclick="showImage('苦难河床.avif')">苦难河床</a></li> 
+    <li> <a href="#" onclick="showImage('寻觅道路.avif')">寻觅道路</a></li> 
+    <li> <a href="#" onclick="showImage('遭遇战.avif')">遭遇战</a></li> 
    </ul> 
-   <h3>����</h3> 
+   <h3>奇遇</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('��ХϿ��.avif')">��ХϿ��</a></li> 
-    <li> <a href="#" onclick="showImage('��ɳƽԭ.avif')">��ɳƽԭ</a></li> 
-    <li> <a href="#" onclick="showImage('���խ·.avif')">���խ·</a></li> 
+    <li> <a href="#" onclick="showImage('风啸峡谷.avif')">风啸峡谷</a></li> 
+    <li> <a href="#" onclick="showImage('砾沙平原.avif')">砾沙平原</a></li> 
+    <li> <a href="#" onclick="showImage('崎岖窄路.avif')">崎岖窄路</a></li> 
    </ul> 
-   <h3>��վ</h3> 
+   <h3>哨站</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('����ӭ��֮��.avif')">����ӭ��֮��</a></li> 
-    <li> <a href="#" onclick="showImage('���ӭ��֮��.avif')">���ӭ��֮��</a></li> 
-    <li> <a href="#" onclick="showImage('����ӭ��֮��.avif')">����ӭ��֮��</a></li> 
+    <li> <a href="#" onclick="showImage('广袤迎敌之处.avif')">广袤迎敌之处</a></li> 
+    <li> <a href="#" onclick="showImage('峥嵘迎敌之处.avif')">峥嵘迎敌之处</a></li> 
+    <li> <a href="#" onclick="showImage('荒弃迎敌之处.avif')">荒弃迎敌之处</a></li> 
    </ul> 
-   <h3>����</h3> 
+   <h3>其他</h3> 
    <ul> 
-    <li> <a href="#" onclick="showImage('����_33_���˻��֮��.avif')">����_33_���˻��֮��</a></li> 
-    <li> <a href="#" onclick="showImage('��ѧ�ؿ�_tr01_����ѵ��.avif')">��ѧ�ؿ�_tr01_����ѵ��</a></li> 
-    <li> <a href="#" onclick="showImage('��ѧ�ؿ�_tr02_�ɾ�ѵ��.avif')">��ѧ�ؿ�_tr02_�ɾ�ѵ��</a></li> 
-    <li> <a href="#" onclick="showImage('��ѧ�ؿ�_tr03_����ѵ��.avif')">��ѧ�ؿ�_tr03_����ѵ��</a></li> 
-    <li> <a href="#" onclick="showImage('��Ұ����_32_ǰ��Ӫ��.avif')">��Ұ����_32_ǰ��Ӫ��</a></li> 
-    <li> <a href="#" onclick="showImage('פ����_27_פ����.avif')">פ����_27_פ����</a></li> 
+    <li> <a href="#" onclick="showImage('后舍_33_众人会聚之地.avif')">后舍_33_众人会聚之地</a></li> 
+    <li> <a href="#" onclick="showImage('教学关卡_tr01_狩猎训练.avif')">教学关卡_tr01_狩猎训练</a></li> 
+    <li> <a href="#" onclick="showImage('教学关卡_tr02_采掘训练.avif')">教学关卡_tr02_采掘训练</a></li> 
+    <li> <a href="#" onclick="showImage('教学关卡_tr03_工具训练.avif')">教学关卡_tr03_工具训练</a></li> 
+    <li> <a href="#" onclick="showImage('旷野房车_32_前进营地.avif')">旷野房车_32_前进营地</a></li> 
+    <li> <a href="#" onclick="showImage('驻扎地_27_驻扎地.avif')">驻扎地_27_驻扎地</a></li> 
    </ul>  
   </div> 
   <div id="content"></div>  
