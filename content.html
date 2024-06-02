@@ -71,7 +71,7 @@
 		  color: black;
 		  font-family: Arial;
 		  font-weight: 500;
-		}
+		}        
     </style>
     <script>
         // 图片查看功能
@@ -186,7 +186,7 @@
     <div id="directory">
         <h3><a href="index.html">主页</a></h3>
         <h3 onclick="toggleContent('buildingContent')">地图相关</h3>
-        <div id="buildingContent" style="display: none;">
+        <div id="buildingContent" style="display: block;">
             <ul>
     <li> <a href="index.html">资源点</a></li>
     <li> <a href="content.html">百变陌域说明</a></li>  
@@ -359,39 +359,40 @@
     </div>
     <div id="content">
         <blockquote>
-<p><strong>陌域特殊大地图</strong></p>
-<p><a href="#" onclick="showImage('Image/矿牢爬行.avif')">矿牢爬行</a>【澄亮石126 铁93 石60 外圈澄亮石】&nbsp;&nbsp;【澄亮123 铁72 石60 内圈澄亮石】</p>
-<p><a href="#" onclick="showImage('Image/峰回歧路.avif')">峰回歧路</a>[澄亮石9 铁33 石头125 120木]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18木3棵树要第二次决断</p>
-<br/>
-<p><strong>木头图(100木以上)：</strong></p>
-<p>4<a href="#" onclick="showImage('Image/射程以内.avif')">射程以内</a>[120木 1蟹腿 水]&nbsp; &nbsp; &nbsp; &nbsp;黄绿茂林底下2处，地图最左下1处，地图最右上1处</p>
-<p>1<a href="#" onclick="showImage('Image/固守险境.avif')">固守险境</a>[180木 54铁 3蟹腿 水]&nbsp; &nbsp; 地图左上1处</p>
-<p>1<a href="#" onclick="showImage('Image/乌胡米什.avif')">乌胡米什</a>[120木 水]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;左下角城镇</p>
-<br/>
-<p><strong>石头图(80石以上)：</strong></p>
-<p>3<a href="#" onclick="showImage('Image/部落之争.avif')">部落之争</a>[120石 51铁]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;最左上1处，幽邃禁坑右下角1处，右上蟹岛旁边1处</p>
-<p>1<a href="#" onclick="showImage('Image/别塔卜-阿帕卡里.avif')">别塔卜-阿帕卡里</a>[33/42铁 54/60石]&nbsp; &nbsp;右下角城镇</p>
-<p>1<a href="#" onclick="showImage('Image/那穆图巴辛.avif')">那穆图巴辛</a>[105石]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;右下角城镇</p>
-<p>1<a href="#" onclick="showImage('Image/遗智还家.avif')">遗智还家</a>[100石]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;地图下方1处</p>
-<br/>
-<p><strong>铁图(未整理)</strong></p>
-<p>除了上述的部落之争，固守险境之外，还有</p>
-<p>4<a href="#" onclick="showImage('Image/熔铁之心.avif')">熔铁之心</a>[24铁]&nbsp;&nbsp;&nbsp;&nbsp;左上角1处，幽邃禁坑正下方1处，地图右下角1处，白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/见证所.avif')">见证所</a>[27/30]&nbsp;&nbsp;&nbsp;&nbsp;左上角1处</p>
-<p>2<a href="#" onclick="showImage('Image/乱石岗.avif')">乱石岗</a>：白水绿洲左下角1处，白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/十字路口.avif')">十字路口</a>[27铁]&nbsp;&nbsp;&nbsp;&nbsp;地图最右侧1处</p>
-<p>1<a href="#" onclick="showImage('Image/矿脉守卫.avif')">矿脉守卫</a>：白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/清泉之下.avif')">清泉之下</a>[15铁]&nbsp;&nbsp;&nbsp;&nbsp;地图右上角，15个铁全在最右下</p>
-<br/>
-<p><strong>澄亮石</strong></p>
-<p>没排序整理 主要大地图没有</p>
-<p><a href="#" onclick="showImage('Image/金库.avif')">金库</a>[12澄亮石 25石]</p>
-<p><a href="#" onclick="showImage('Image/迎宾走廊.avif')">迎宾走廊</a>[24澄亮石]</p>
-<p><a href="#" onclick="showImage('Image/藏宝湾.avif')">藏宝湾</a>[15澄亮石 27铁]</p>
-<p><a href="#" onclick="showImage('Image/惊叫洞穴.avif')">惊叫洞穴</a>[]</p>
-<p><a href="#" onclick="showImage('Image/寻觅澄亮.avif')">寻觅澄亮</a>[]</p>
+            <h3>百变陌域说明</h3>
+            <p>对决：找到并击败：紫石头/时光守卫/晶玲兽/扎罗/保安/行脚艺人/女祭司/墓碑/晶玲兽&晶珑兽</p>
+            <p>捕猎：找到并击败：落沙晶蹄兽/刺棱壳兽</p>
+            <p>营救：找到寻宝人</p>
+            <p>护送：护送劳工</p>
+            <p>窃贼：击败1/2/3轮窃贼敌袭</p>
+            <p>防御：坚持4/5/6个晚上</p>
+            <br/>
+            <p>1，天气：决定本次陌域的主要天气环境，会在以下三个中随机刷出一个：</p>
+            <p>雷雨之地：以下雨打雷环境为主</p>
+            <p>旱尘之地：以沙尘暴干旱环境为主</p>
+            <p>灼热之地：以骄阳烈日环境为主</p>
+            <br/>
+            <p>2，地形：决定本次陌域的区块会如何布局，会在以下四个中随机刷出一个(目前不确定，等我再打打)</p>
+            <p>坦途；险关；丘陵；通幽处</p>
+            <p>4个地形中丘陵最多矿牢爬行跟峰回歧路 一般两个时不时三个 其他概率一两个情况较多</p>
+            <p>坦途 节点较少 容易全开 基本上就是抓鹿跟龟</p>
+            <p>险关 基本不进 难开全节点 都是一步一步前进开节点很麻烦</p>
+            <p>丘陵 连贯环形节点 3天不太够 5天肯定能全开 配合寻宝人的神 盛产矿牢爬行 峰回歧路 铁石木高产量图  推介林中人tag 最简单</p>
+            <p>通幽处 地形比险关好点 都是节点最后分叉两个多 最后一堆献祭之所</p>
+            <br/>
+            <p>3，敌人倾向：决定本次陌域中单张地图的敌人主题，会在以下四个中随机刷出一个</p>
+            <p>雇佣兵：会把敌人替换为萨卡兹(你能想到的萨卡兹都在这里)</p>
+            <p>林中人：会把敌人替换为森林中的动物(绝大多数来自落叶逐火和密林悍将归来)</p>
+            <p>机械化：会把敌人替换成机械(绝大多数来自孤星和绿野幻梦)</p>
+            <p>原生态：敌人不变</p>
+            <p>敌人替换遵循普通替换普通，精英替换精英，远程替换远程，近战替换近战，红色怪替换红色怪这一原则</p>
+            <br/>
+            <p>陌域额外目标：会在以下三个中随机刷出一个</p>
+            <p>捕猎行动：使用捕兽笼捕获2个动物</p>
+            <p>战斗行动：击倒50个敌人</p>
+            <p>建造行动：使2个区块升级</p>
         </blockquote>
+        <img alt="" src="Image/百变陌域奖励表.avif"/>
     </div>
 </body>
-
 </html>

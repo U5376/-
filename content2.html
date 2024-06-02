@@ -71,7 +71,7 @@
 		  color: black;
 		  font-family: Arial;
 		  font-weight: 500;
-		}
+		}        
     </style>
     <script>
         // 图片查看功能
@@ -182,11 +182,11 @@
 </head>
 
 <body>
-    <button id="toggle-btn" onclick="toggleExpand()">≡</button>
+     <button id="toggle-btn" onclick="toggleExpand()">≡</button>
     <div id="directory">
         <h3><a href="index.html">主页</a></h3>
         <h3 onclick="toggleContent('buildingContent')">地图相关</h3>
-        <div id="buildingContent" style="display: none;">
+        <div id="buildingContent" style="display: block;">
             <ul>
     <li> <a href="index.html">资源点</a></li>
     <li> <a href="content.html">百变陌域说明</a></li>  
@@ -357,41 +357,71 @@
         </ul>
         </div>
     </div>
-    <div id="content">
+        <div id="content">
         <blockquote>
-<p><strong>陌域特殊大地图</strong></p>
-<p><a href="#" onclick="showImage('Image/矿牢爬行.avif')">矿牢爬行</a>【澄亮石126 铁93 石60 外圈澄亮石】&nbsp;&nbsp;【澄亮123 铁72 石60 内圈澄亮石】</p>
-<p><a href="#" onclick="showImage('Image/峰回歧路.avif')">峰回歧路</a>[澄亮石9 铁33 石头125 120木]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18木3棵树要第二次决断</p>
-<br/>
-<p><strong>木头图(100木以上)：</strong></p>
-<p>4<a href="#" onclick="showImage('Image/射程以内.avif')">射程以内</a>[120木 1蟹腿 水]&nbsp; &nbsp; &nbsp; &nbsp;黄绿茂林底下2处，地图最左下1处，地图最右上1处</p>
-<p>1<a href="#" onclick="showImage('Image/固守险境.avif')">固守险境</a>[180木 54铁 3蟹腿 水]&nbsp; &nbsp; 地图左上1处</p>
-<p>1<a href="#" onclick="showImage('Image/乌胡米什.avif')">乌胡米什</a>[120木 水]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;左下角城镇</p>
-<br/>
-<p><strong>石头图(80石以上)：</strong></p>
-<p>3<a href="#" onclick="showImage('Image/部落之争.avif')">部落之争</a>[120石 51铁]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;最左上1处，幽邃禁坑右下角1处，右上蟹岛旁边1处</p>
-<p>1<a href="#" onclick="showImage('Image/别塔卜-阿帕卡里.avif')">别塔卜-阿帕卡里</a>[33/42铁 54/60石]&nbsp; &nbsp;右下角城镇</p>
-<p>1<a href="#" onclick="showImage('Image/那穆图巴辛.avif')">那穆图巴辛</a>[105石]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;右下角城镇</p>
-<p>1<a href="#" onclick="showImage('Image/遗智还家.avif')">遗智还家</a>[100石]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;地图下方1处</p>
-<br/>
-<p><strong>铁图(未整理)</strong></p>
-<p>除了上述的部落之争，固守险境之外，还有</p>
-<p>4<a href="#" onclick="showImage('Image/熔铁之心.avif')">熔铁之心</a>[24铁]&nbsp;&nbsp;&nbsp;&nbsp;左上角1处，幽邃禁坑正下方1处，地图右下角1处，白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/见证所.avif')">见证所</a>[27/30]&nbsp;&nbsp;&nbsp;&nbsp;左上角1处</p>
-<p>2<a href="#" onclick="showImage('Image/乱石岗.avif')">乱石岗</a>：白水绿洲左下角1处，白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/十字路口.avif')">十字路口</a>[27铁]&nbsp;&nbsp;&nbsp;&nbsp;地图最右侧1处</p>
-<p>1<a href="#" onclick="showImage('Image/矿脉守卫.avif')">矿脉守卫</a>：白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/清泉之下.avif')">清泉之下</a>[15铁]&nbsp;&nbsp;&nbsp;&nbsp;地图右上角，15个铁全在最右下</p>
-<br/>
-<p><strong>澄亮石</strong></p>
-<p>没排序整理 主要大地图没有</p>
-<p><a href="#" onclick="showImage('Image/金库.avif')">金库</a>[12澄亮石 25石]</p>
-<p><a href="#" onclick="showImage('Image/迎宾走廊.avif')">迎宾走廊</a>[24澄亮石]</p>
-<p><a href="#" onclick="showImage('Image/藏宝湾.avif')">藏宝湾</a>[15澄亮石 27铁]</p>
-<p><a href="#" onclick="showImage('Image/惊叫洞穴.avif')">惊叫洞穴</a>[]</p>
-<p><a href="#" onclick="showImage('Image/寻觅澄亮.avif')">寻觅澄亮</a>[]</p>
-        </blockquote>
+<h3>生息演算 奇遇收益一览</h3>
+</br>
+<p>*做了个奇遇收益一览，本统计中不包括主线/支线相关奇遇，按照收益类别可分为赤金类、食材类、建材类、购物类、功能类、战斗类、及特殊类(可获得信物)</p>
+<p>*我自己是靠着做统计把大部分奇遇收益都记下来了，这样看奇遇的时候只要看事件名称就知道要不要花决断点，相当省时间，希望能帮到大家</p>
+<p>*用<span style="color:red; font-family:Arial; font-weight:bold;">红色</span>标了一下几个高收益的(也就是能获得鹿肉和乌龟肉的)，有遗漏的欢迎补充(感谢3楼Mondway对沉默的遗迹群事件的补充&感谢13楼Fasch对荒弃小屋事件的补充！)</p>
+</br>
+<h3>赤金类</h3>
+<p>地摊门道 55-65赤金/付20赤金换1-100赤金</p>
+<p>兑换的麻烦 55-65赤金</p>
+<p>相逢(选项2) 55-65赤金</p>
+<p>举手之劳 5蟹钳换90-110赤金；3肉片换110-130赤金；55-65赤金</p>
+<p>从头再来 10木材换110-130赤金；8石材换150-170赤金；55-65赤金</p>
+</br>
+<h3>食材类</h3>
+<p>连夜劳作 5-8稻谷</p>
+<p>紊乱水流 7-10蟹钳</p>
+<p>厨艺交流 3-4肉片</p>
+<p>巅峰对决(成功) 3-4肉片</p>
+<p>林中狩猎队(选项2) 4-5羽兽肉</p>
+<p>沉默的遗迹群(选项1、有概率)6-8羽兽肉</p>
+<p>断裂的翅翼 4-5羽兽肉</p>
+<p>随波逐流 2-3腿肉</p>
+<p><span style="color:red; font-family:Arial; font-weight:bold;">暗夜中的恶灵 1鹿肉；</span>5辅料</p>
+<p><span style="color:red; font-family:Arial; font-weight:bold;">混乱的寓言 付100赤金买2乌龟肉；</span>5辅料</p>
+</br>
+<h3>建材类</h3>
+<p>涌泉 5水换10-20水</p>
+<p>远水 8-13水</p>
+<p>漂泊的木匠兄弟 18-23木材</p>
+<p>工事建造 8-13石材</p>
+<p>锻造传说 4-7铁矿</p>
+<p>最后一幕 8-13木材、4-7石材、0-3铁矿</p>
+<p>荒弃小屋 4-7石材、0-3铁矿</p>
+<p>繁荣的遗产 2澄亮石；1-3澄亮石</p>
+</br>
+<h3>购物类</h3>
+<p>原汁原味手艺人 付50赤金买一份好食物；付20赤金买一份食物</p>
+<p>加盟店的结局 付50赤金买一件较好的设施；付20赤金买一件普通设施</p>
+<p>巡回杂货铺 付20赤金买一件低级支援道具</p>
+<p>再见巡回杂货铺 付50赤金买一份高级支援道具；付20赤金买一份低级支援道具</p>
+</br>
+<h3>功能类</h3>
+<p style="color:red; font-family:Arial; font-weight:bold;">驯养计划 付2调味干粮换遇到鹿的机会</p>
+<p style="color:red; font-family:Arial; font-weight:bold;">副作用 付15稻谷换遇到乌龟的机会</p>
+<p>战争与和平 缓和/增强未来3日的敌袭攻势</p>
+<p>“羽兽牌”天气许愿机 付30赤金，降低当前区域的天气等级</p>
+<p>观察台 付50赤金点亮两个未点亮的地块</p>
+<p>林中狩猎队(选项1) 3日内找到喙中奇物</p>
+<p>相逢(选项1) 3日内定位灌木丛</p>
+<p>荒弃小屋(选项1) 付20赤金，3日内更容易找到埋没的金属箱</p>
+</br>
+<h3>战斗类</h3>
+<p>拦路打劫 付50稻谷/敌袭</p>
+<p>巅峰对决(失败) 野猪敌袭</p>
+<p>追踪荒地鼷兽 源石虫敌袭</p>
+<p>沉默的遗迹群(选项1、有概率) 王酋军敌袭</p>
+</br>
+<h3>特殊</h3>
+<p>沉默的遗迹群 消耗1低温鲜烹炙肉，获得信物(醒神目视仪)</p>
+<p>追踪荒地鼷兽(挖土堆) 获得信物(回收利用手册)</p>
+</br>
+<a href="https://nga.178.com/read.php?&tid=39455503">https://nga.178.com/read.php?&tid=39455503</a>
+    </blockquote>
     </div>
 </body>
-
 </html>

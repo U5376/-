@@ -71,7 +71,7 @@
 		  color: black;
 		  font-family: Arial;
 		  font-weight: 500;
-		}
+		}        
     </style>
     <script>
         // 图片查看功能
@@ -186,7 +186,7 @@
     <div id="directory">
         <h3><a href="index.html">主页</a></h3>
         <h3 onclick="toggleContent('buildingContent')">地图相关</h3>
-        <div id="buildingContent" style="display: none;">
+        <div id="buildingContent" style="display: block;">
             <ul>
     <li> <a href="index.html">资源点</a></li>
     <li> <a href="content.html">百变陌域说明</a></li>  
@@ -357,41 +357,71 @@
         </ul>
         </div>
     </div>
-    <div id="content">
+        <div id="content">
         <blockquote>
-<p><strong>陌域特殊大地图</strong></p>
-<p><a href="#" onclick="showImage('Image/矿牢爬行.avif')">矿牢爬行</a>【澄亮石126 铁93 石60 外圈澄亮石】&nbsp;&nbsp;【澄亮123 铁72 石60 内圈澄亮石】</p>
-<p><a href="#" onclick="showImage('Image/峰回歧路.avif')">峰回歧路</a>[澄亮石9 铁33 石头125 120木]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18木3棵树要第二次决断</p>
+<h3>无主地+要塞 收益统计</h3>
 <br/>
-<p><strong>木头图(100木以上)：</strong></p>
-<p>4<a href="#" onclick="showImage('Image/射程以内.avif')">射程以内</a>[120木 1蟹腿 水]&nbsp; &nbsp; &nbsp; &nbsp;黄绿茂林底下2处，地图最左下1处，地图最右上1处</p>
-<p>1<a href="#" onclick="showImage('Image/固守险境.avif')">固守险境</a>[180木 54铁 3蟹腿 水]&nbsp; &nbsp; 地图左上1处</p>
-<p>1<a href="#" onclick="showImage('Image/乌胡米什.avif')">乌胡米什</a>[120木 水]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;左下角城镇</p>
+<p>(2024.02.21更新)</p>
+<p>*统计了所有无主地和要塞在首通、主地图刷新、以及陌域中时的材料掉落情况，具体数字可能略有浮动，仅供参考</p>
+<p>*修正了宿命终结的赤金掉落量</p>
+<p>*增加了陌域专属无主地的掉落统计(感谢43楼的热心坛友 [@时坠] )</p>
+<p>*1宝箱=50赤金+少量食材/建材</p>
 <br/>
-<p><strong>石头图(80石以上)：</strong></p>
-<p>3<a href="#" onclick="showImage('Image/部落之争.avif')">部落之争</a>[120石 51铁]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;最左上1处，幽邃禁坑右下角1处，右上蟹岛旁边1处</p>
-<p>1<a href="#" onclick="showImage('Image/别塔卜-阿帕卡里.avif')">别塔卜-阿帕卡里</a>[33/42铁 54/60石]&nbsp; &nbsp;右下角城镇</p>
-<p>1<a href="#" onclick="showImage('Image/那穆图巴辛.avif')">那穆图巴辛</a>[105石]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;右下角城镇</p>
-<p>1<a href="#" onclick="showImage('Image/遗智还家.avif')">遗智还家</a>[100石]&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;地图下方1处</p>
+<p style="font-weight:bold">无主地</p>
+<b><p>1.失落的巨翼兽(推荐)</p></b>
+<p>首通/陌域(1宝箱)：303粗制赤金，9晶肝茸髓，7带骨腿肉，4圆圆肉片，3小麦，1辅料，5木材</p>
+<p>主地图刷新(0宝箱)：251粗制赤金， 7晶肝茸髓，4带骨腿肉，4圆圆肉片</p>
+<p>推荐理由：赤金掉落量属平均水准，同时可额外获得高级食材，兄弟，你是真的很香喘</p>
 <br/>
-<p><strong>铁图(未整理)</strong></p>
-<p>除了上述的部落之争，固守险境之外，还有</p>
-<p>4<a href="#" onclick="showImage('Image/熔铁之心.avif')">熔铁之心</a>[24铁]&nbsp;&nbsp;&nbsp;&nbsp;左上角1处，幽邃禁坑正下方1处，地图右下角1处，白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/见证所.avif')">见证所</a>[27/30]&nbsp;&nbsp;&nbsp;&nbsp;左上角1处</p>
-<p>2<a href="#" onclick="showImage('Image/乱石岗.avif')">乱石岗</a>：白水绿洲左下角1处，白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/十字路口.avif')">十字路口</a>[27铁]&nbsp;&nbsp;&nbsp;&nbsp;地图最右侧1处</p>
-<p>1<a href="#" onclick="showImage('Image/矿脉守卫.avif')">矿脉守卫</a>：白水绿洲中部1处</p>
-<p>1<a href="#" onclick="showImage('Image/清泉之下.avif')">清泉之下</a>[15铁]&nbsp;&nbsp;&nbsp;&nbsp;地图右上角，15个铁全在最右下</p>
+<b><p>2.深岩裂谷(不推荐)</p></b>
+<p>首通/陌域(1宝箱)：203粗制赤金，3小麦，4水，15石材，5支援道具</p>
+<p>主地图刷新(0宝箱)：152粗制赤金，15石材，5支援道具</p>
+<p>不推荐理由：赤金掉落全无主地最低，甚至比要塞还低，5个水上平台+15石材感觉不值100赤金</p>
 <br/>
-<p><strong>澄亮石</strong></p>
-<p>没排序整理 主要大地图没有</p>
-<p><a href="#" onclick="showImage('Image/金库.avif')">金库</a>[12澄亮石 25石]</p>
-<p><a href="#" onclick="showImage('Image/迎宾走廊.avif')">迎宾走廊</a>[24澄亮石]</p>
-<p><a href="#" onclick="showImage('Image/藏宝湾.avif')">藏宝湾</a>[15澄亮石 27铁]</p>
-<p><a href="#" onclick="showImage('Image/惊叫洞穴.avif')">惊叫洞穴</a>[]</p>
-<p><a href="#" onclick="showImage('Image/寻觅澄亮.avif')">寻觅澄亮</a>[]</p>
-        </blockquote>
+<b><p>3.失落的长生军(推荐)</p></b>
+<p>首通/陌域/刷新(0宝箱)：252粗制赤金，30木材，33石材，16铁矿石</p>
+<p>推荐理由：和上一条的保安关形成鲜明对比，赤金掉落保持平均水准的同时可获得大量建材，赚</p>
+<br/>
+<b><p>4.晶生玲珑(不推荐)</p></b>
+<p>首通/陌域/刷新(0宝箱)： 203粗制赤金，5澄亮石</p>
+<p>不推荐理由：如果boss刷在中间的话可以用澄闪+林双人过图，在已经消耗1行动点时可以一打，然而一旦boss刷在右侧就需要投入大量的资源，费劲打半天一看奖励一丢丢，不值得</p>
+<br/>
+<b><p>5.火圈狂舞(推荐)</p></b>
+<p>首通/陌域/刷新(0宝箱)：351粗制赤金，25晶莹碎片，1辅料，5澄亮石(首通时还有3可挖)</p>
+<p>推荐理由：赤金掉落高，还有晶莹碎片，非常赚</p>
+<br/>
+<b><p>6.大地病症(推荐)</p></b>
+<p>首通/陌域(2宝箱)：403粗制赤金，6小麦，4水，5木材，4食物，5建筑(二级)</p>
+<p>主地图刷新(0宝箱)：302粗制赤金，4食物， 5建筑(二级)</p>
+<p>推荐理由：赤金掉落高于平均，且掉食物和二级建筑，赚</p>
+<br/>
+<b><p>7.宿命终结(推荐)</p></b>
+<p>首通/陌域/刷新(0宝箱)：501粗制赤金，1辅料，4澄亮石</p>
+<p>推荐理由：赤金掉落最高的无主地</p>
+<br/>
+<b><p>8.翠梦遗址(主地图不刷新)(不推荐)</p></b>
+<p>首通/陌域(0宝箱)：302粗制赤金，5带骨腿肉，5羽兽翅肉，4支援道具</p>
+<p>不推荐理由：楼主被浸季、6级陌域、每日刷新小怪的这关打破防了，这辈子都不会再碰翠梦遗址了闪光</p>
+<br/>
+<b><p>9.清泉之下(主地图不刷新)(推荐)</p></b>
+<p>首通/陌域(0宝箱)：252粗制赤金，50石材，20 (掉落) +15(自挖)铁矿石</p>
+<p>推荐理由：赤金掉落属平均水平的同时额外掉大量石材铁矿石，陌域中可打</p>
+<br/>
+<b><p>要塞</p></b>
+<b><p>1.战争本能</p></b>
+<p>首通/陌域/刷新(0宝箱)：252粗制赤金，2带骨腿肉，2圆圆肉片，2羽兽翅肉，15木材，6石材</p>
+<b><p>2.不速之客</p></b>
+<p>首通/陌域(2宝箱)：412粗制赤金， 2带骨腿肉，2圆圆肉片，2羽兽翅肉，1软骨肉块，14水，15木材，16石材</p>
+<p>首通/陌域(1宝箱)：328粗制赤金， 2带骨腿肉，5圆圆肉片，2羽兽翅肉，1软骨肉块，1辅料，4水，15木材，11石材</p>
+<p>主地图刷新(0宝箱)：252粗制赤金， 2带骨腿肉，2圆圆肉片，2羽兽翅肉，15木材，6石材</p>
+<b><p>3.征税的选择</p></b>
+<p>首通/陌域(1宝箱)：328粗制赤金， 1晶肝茸髓，2带骨腿肉，2圆圆肉片，2羽兽翅肉，4水，15木材，11石材</p>
+<p>*主地图暂时无法刷新，疑似bug(感谢25楼坛友小野塚西瓜提出) </p>
+<br/>
+<h3>陌域无主地</h3>
+<img alt="" src="Image/陌域无主地.jpg"/>
+<a href="https://nga.178.com/read.php?&tid=39227931">https://nga.178.com/read.php?&tid=39227931 </a>
+    </blockquote>
     </div>
 </body>
-
 </html>
