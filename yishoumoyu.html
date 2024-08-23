@@ -121,54 +121,52 @@
         }
 
         // 目录展开/折叠功能，包括自动隐藏和显示
-        document.addEventListener("DOMContentLoaded",
-            function() {
-                var isExpanded = false; // 修改为false，使目录初始状态为折叠
-                function toggleExpand() {
-                    isExpanded = !isExpanded;
-                    var directory = document.getElementById("directory");
-                    var body = document.body;
-                    if (isExpanded) {
-                        directory.classList.add("expanded");
-                        body.classList.add("directory-expanded");
-                        directory.style.transform = "translateX(0)";
-                    } else {
-                        directory.classList.remove("expanded");
-                        body.classList.remove("directory-expanded");
-                        directory.style.transform = "translateX(-100%)";
-                    }
-                }
-
-                // 目录初始为折叠状态
+        document.addEventListener("DOMContentLoaded", function() {
+            var isExpanded = true; // 修改为true，使目录初始状态为展开
+            function toggleExpand() {
+                isExpanded = !isExpanded;
                 var directory = document.getElementById("directory");
                 var body = document.body;
-                directory.classList.remove("expanded");
-                body.classList.remove("directory-expanded");
-                directory.style.transform = "translateX(-100%)"; // 确保目录初始为折叠状态
-                // 添加自动隐藏和显示功能
-                var hoverArea = document.createElement("div");
-                hoverArea.style.position = "absolute";
-                hoverArea.style.top = "0";
-                hoverArea.style.left = "0";
-                hoverArea.style.width = "20px";
-                hoverArea.style.height = "100vh";
-                hoverArea.style.zIndex = "1000";
-                document.body.appendChild(hoverArea);
+                if (isExpanded) {
+                    directory.classList.add("expanded");
+                    body.classList.add("directory-expanded");
+                    directory.style.transform = "translateX(0)";
+                } else {
+                    directory.classList.remove("expanded");
+                    body.classList.remove("directory-expanded");
+                    directory.style.transform = "translateX(-100%)";
+                }
+            }
 
-                hoverArea.addEventListener("mouseenter",
-                    function() {
-                        directory.style.transform = "translateX(0)";
-                    });
+            // 目录初始为展开状态
+            var directory = document.getElementById("directory");
+            var body = document.body;
+            directory.classList.add("expanded");
+            body.classList.add("directory-expanded");
+            directory.style.transform = "translateX(0)"; // 确保目录初始为展开状态
 
-                directory.addEventListener("mouseleave",
-                    function() {
-                        if (!isExpanded) {
-                            directory.style.transform = "translateX(-100%)";
-                        }
-                    });
+            // 添加自动隐藏和显示功能
+            var hoverArea = document.createElement("div");
+            hoverArea.style.position = "absolute";
+            hoverArea.style.top = "0";
+            hoverArea.style.left = "0";
+            hoverArea.style.width = "20px";
+            hoverArea.style.height = "100vh";
+            hoverArea.style.zIndex = "1000";
+            document.body.appendChild(hoverArea);
 
-                document.getElementById("toggle-btn").addEventListener("click", toggleExpand);
+            hoverArea.addEventListener("mouseenter", function() {
+                directory.style.transform = "translateX(0)";
             });
+
+            directory.addEventListener("mouseleave", function() {
+                if (!isExpanded) {
+                    directory.style.transform = "translateX(-100%)";
+                }
+            });
+
+            document.getElementById("toggle-btn").addEventListener("click", toggleExpand);
+        });
 
         function toggleContent(contentId) {
             var content = document.getElementById(contentId);
@@ -209,7 +207,7 @@
             </ul>
         </div>
         <h3 onclick="toggleContent('A1')">异兽陌域</h3>
-        <div id="A1" style="display: none;">
+        <div id="A1" style="display: block;">
         <ul>
             <li> <a href="#" onclick="showImage('Image/捕猎区_岩层轰鸣.avif')">捕猎区_岩层轰鸣</a></li>
             <li> <a href="#" onclick="showImage('Image/捕猎区_香草境.avif')">捕猎区_香草境</a></li>
@@ -379,27 +377,16 @@
     </div>
         <div id="content">
         <blockquote>
-<h3>兽栏产出 养殖 捕抓 闪光动物</h3>
-<p>顶配 2黑蟹 2红蟹 6小蟹 4鸟 2大角羊 4小角羊 2茂密苔生 2普通苔生</p>
+<h3>异兽陌域</h3>
+<p>编辑中</p>
 <br/>
-<p>闪光动物无产出加成.闪率大概1.5% 钳钳生风可能会更低0.1%</p>
+<p>*</p>
 <br/>
-<h4>在哪关刷，怎么刷？</h4>
-<p>狩猎关的资源都是3天刷新一次，无论上个周期打没打都会刷新</p>
-<p>闪光的判定是在进关时，而不是资源刷新时，所以可以退出重进，也可以读档，但是如果没抓到闪光，再进关就不一定是闪了</p>
+<h4>*</h4>
+<p>*</p>
+
 <br/>
-<p>以下是推荐关卡： 基本主要浅草荒原 翠影关就能抓齐6种 两种角羊看运气 大迁徙感觉出率不太行 就没见过闪还刷得慢</p>
-<p>浅草荒原：绿苔生兽5只，白苔生兽5只，鸟4只</p>
-<p>翠影关：红螃蟹3只，白螃蟹4只，但黑螃蟹数量稳定，有3只(第三只在30秒后出现)，同时岛中的那只红螃蟹有10%概率被替换为黑螃蟹</p>
-<p>岩壳蟹群：红螃蟹很多，白螃蟹也不少，黑螃蟹比较随机(最多7只，这7只的概率分别是60%，30%，30%，30%，30%，10%，10%，其中10%的那两只在1分钟后出现)</p>
-<p>饮水为饵：开局4只羊 我这3只大角羊 刷不到就退</p>
-<p>聚羽之地：鸟7只(最后一只要清完全图才会刷出)，单刷鸟的时候刷这关，否则不如浅草荒原</p>
-<p>原始奔腾：小羊4-8只，大羊0-3只。开局一共5-6只，另外2只在一段时间后出现</p>
-<p>大迁徙：大羊10-11只，绿苔生兽6-7只(最后一只要清完全图才会刷出)，红螃蟹2只。单刷大羊的时候刷这关，否则效率不如其他关，因为是一波一波出怪</p>
-<p>数据来源：PRTS.Map</p>
-<p>另外，钳钳生风敌袭有16只黑螃蟹，但抓了之后结算不给， 心胸狭隘</p>
-<br/>
-<a href="https://nga.178.com/read.php?&tid=39891112">[攻略] [生息演算] 闪光动物全收集，分享一些心得和数据</a>
+<a href="https://">*</a>
     </blockquote>
     </div>
 </body>

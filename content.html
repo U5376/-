@@ -186,12 +186,15 @@
     <div id="directory">
         <h3><a href="index.html">主页</a></h3>
         <h3 onclick="toggleContent('buildingContent')">地图相关</h3>
-        <div id="buildingContent" style="display: block;">
+        <div id="buildingContent" style="display: none;">
             <ul>
     <li> <a href="index.html">资源点</a></li>
-    <li> <a href="content.html">百变陌域说明</a></li>  
-    <li> <a href="content1.html">无主地+要塞 收益统计</a></li>
+    <li> <a href="yishoumoyu.html">异兽魔域</a></li>
+    <li> <a href="content.html">百变陌域说明</a></li>
     <li> <a href="content2.html">奇遇收益一览</a></li>
+    <br/> 
+    <li> <a href="content1.html">无主地+要塞 收益统计</a></li>
+    <br/> 
     <li> <a href="content3.html">兽栏产出 养殖 捕抓 闪光动物</a></li>
     <br/>     
                 <li> <a href="#" onclick="showImage('Image/基建1.avif')">基建1</a></li>
@@ -204,6 +207,22 @@
                 <li> <a href="#" onclick="showImage('Image/沙洲遗闻 料理表.jpg')">料理表1</a></li>
                 <li> <a href="#" onclick="showImage('Image/料理表2.avif')">料理表2 分类整理</a></li>
             </ul>
+        </div>
+        <h3 onclick="toggleContent('A1')">异兽陌域</h3>
+        <div id="A1" style="display: none;">
+        <ul>
+            <li> <a href="#" onclick="showImage('Image/捕猎区_岩层轰鸣.avif')">捕猎区_岩层轰鸣</a></li>
+            <li> <a href="#" onclick="showImage('Image/捕猎区_香草境.avif')">捕猎区_香草境</a></li>
+            <li> <a href="#" onclick="showImage('Image/捕猎区_烟霭池.avif')">捕猎区_烟霭池</a></li>
+            <li> <a href="#" onclick="showImage('Image/捕猎区_暗流溶穴.avif')">捕猎区_暗流溶穴</a></li>
+            <li> <a href="#" onclick="showImage('Image/捕猎区_迷雾巷道.avif')">捕猎区_迷雾巷道</a></li>
+            <li> <a href="#" onclick="showImage('Image/捕猎区_丰腴草原.avif')">捕猎区_丰腴草原</a></li>
+            <li> <a href="#" onclick="showImage('Image/资源区_蔽日密林.avif')">资源区_蔽日密林</a></li>
+            <li> <a href="#" onclick="showImage('Image/资源区_勇者之境.avif')">资源区_勇者之境</a></li>
+            <li> <a href="#" onclick="showImage('Image/资源区_勇者之境_MAP.avif')">勇者之境_MAP</a></li>
+            <li> <a href="#" onclick="showImage('Image/冲突区_齐步走.avif')">冲突区_齐步走</a></li>
+            <li> <a href="#" onclick="showImage('Image/冲突区_不速之敌.avif')">冲突区_不速之敌</a></li>
+        </ul>
         </div>
         <h3 onclick="toggleContent('A1')">资源区</h3>
         <div id="A1" style="display: block;">
@@ -380,13 +399,21 @@
             <p>险关 基本不进 难开全节点 都是一步一步前进开节点很麻烦</p>
             <p>丘陵 连贯环形节点 3天不太够 5天肯定能全开 配合寻宝人的神 盛产矿牢爬行 峰回歧路 铁石木高产量图  推介林中人tag 最简单</p>
             <p>通幽处 地形比险关好点 都是节点最后分叉两个多 最后一堆献祭之所</p>
+<br/>
+<p>坦途   房车连出区块≥3，区块之间较多连接</p>
+<p>险关   房车连出区块<3，区块之间较少连接</p>
+<p>丘陵   房车连出区块固定3个，存在较多的单线末端 位于一条路线最后的、只贿一条进出路线的区块</p>
+<p>通幽处  房车连出区块固定3个，存在更多的单线末端（大多数末端仅有2区块距离）</p>
             <br/>
-            <p>3，敌人倾向：决定本次陌域中单张地图的敌人主题，会在以下四个中随机刷出一个</p>
-            <p>雇佣兵：会把敌人替换为萨卡兹(你能想到的萨卡兹都在这里)</p>
-            <p>林中人：会把敌人替换为森林中的动物(绝大多数来自落叶逐火和密林悍将归来)</p>
-            <p>机械化：会把敌人替换成机械(绝大多数来自孤星和绿野幻梦)</p>
-            <p>原生态：敌人不变</p>
-            <p>敌人替换遵循普通替换普通，精英替换精英，远程替换远程，近战替换近战，红色怪替换红色怪这一原则</p>
+            <p>3，敌人倾向：</p>
+<p>原生态：敌人不会出现变化</p>
+<p>雇佣兵：将遭遇大量萨卡兹类敌人及其附属单位</p>
+<p>林中人：将遭遇大量在森林中能够遇到的敌人（大多首次出场于密林悍将归来与落叶逐火）</p>
+<p>机械化：将遭遇大量莱茵生命所属的机械系敌人及其附属单位（大多首次出场于绿野幻梦与孤星）</p>
+<p>浪嗣影：内容拓展Ⅱ加入的变体，将遭遇大量来自大海的敌人（大多首次出场于覆潮之下、愚人号、生路）</p>
+<p>化物梦：内容拓展Ⅱ新增的变体，将遭遇大量富含大炎印象的敌人（大多首次出场于画中人、登临意、怀黍离）</p>
+<p>猎蜂群：内容拓展Ⅱ新加入的变体，将遭遇大量无人机敌人</p>
+<p>注意：飞行单位的移动无视地形，被替换的飞行单位将会以直飞的方式经过他们原本的路径点</p>
             <br/>
             <p>陌域额外目标：会在以下三个中随机刷出一个</p>
             <p>捕猎行动：使用捕兽笼捕获2个动物</p>
